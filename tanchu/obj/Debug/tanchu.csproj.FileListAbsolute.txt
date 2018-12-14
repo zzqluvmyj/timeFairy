@@ -1,0 +1,4 @@
+D:\cangku\c#program\timeFairy\tanchu\obj\Debug\MainWindow.g.cs
+D:\cangku\c#program\timeFairy\tanchu\obj\Debug\App.g.cs
+D:\cangku\c#program\timeFairy\tanchu\obj\Debug\tanchu_MarkupCompile.cache
+D:\cangku\c#program\timeFairy\tanchu\obj\Debug\tanchu_MarkupCompile.lref
