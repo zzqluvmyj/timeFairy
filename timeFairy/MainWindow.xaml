@@ -6,16 +6,18 @@
         xmlns:local="clr-namespace:timeFairy"
         mc:Ignorable="d"
         Title="MainWindow" Height="280" Width="240"  AllowsTransparency="True" Background="{x:Null}" WindowStyle="None" WindowStartupLocation="Manual" Window.Left="1500" Window.Top="30"
-        MouseLeftButtonDown="pressAndDrag">
+        MouseLeftButtonDown="PressAndDrag">
     <Window.Resources>
+
         <Style TargetType="Rectangle" x:Key="mark">
             <Setter Property="HorizontalAlignment" Value="left"></Setter>
             <Setter Property="Height" Value="20"></Setter>
             <Setter Property="Margin" Value="115,10,115,0"></Setter>
             <Setter Property="VerticalAlignment" Value="Top"></Setter>
             <Setter Property="Width" Value="10"></Setter>
-            <Setter Property="Fill" Value="Gray"></Setter>
+            <Setter Property="Fill" Value="{x:Null}"></Setter>
             <Setter Property="Stroke" Value="Aqua"></Setter>
+            <Setter Property="Grid.ColumnSpan" Value="3"></Setter>
         </Style>
         <Style TargetType="Rectangle" x:Key="mark3">
             <Setter Property="HorizontalAlignment" Value="left"></Setter>
@@ -25,6 +27,7 @@
             <Setter Property="Width" Value="10"></Setter>
             <Setter Property="Fill" Value="Black"></Setter>
             <Setter Property="Stroke" Value="Aqua"></Setter>
+            <Setter Property="Grid.ColumnSpan" Value="3"></Setter>
         </Style>
         <Style TargetType="Ellipse" x:Key="clock">
             <Setter Property="Fill" Value="#FFD1F1C2"></Setter>
@@ -33,9 +36,16 @@
             <Setter Property="Stroke" Value="#FF2F95DC"></Setter>
             <Setter Property="Width" Value="240"></Setter>
             <Setter Property="StrokeThickness" Value="10"></Setter>
+            <Setter Property="Grid.ColumnSpan" Value="3"></Setter>
         </Style>
+
     </Window.Resources>
     <Grid Background="#00000000">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="240px"/>
             <RowDefinition Height="40px"/>
@@ -44,16 +54,17 @@
         <Popup Grid.Row="1">
             <Grid Background="#FFA61212" Height="40" Width="240"/>
         </Popup>
-        
-        
+
+
         <!--表盘-->
-        <Ellipse Style="{StaticResource clock}"></Ellipse>
-        <Rectangle Style="{StaticResource mark3}">
+        <Ellipse Style="{StaticResource clock}" />
+        <!--表盘上的点-->
+        <Rectangle Style="{StaticResource mark3}" Grid.ColumnSpan="3">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="0"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle Style="{StaticResource mark}">
+        <Rectangle Style="{StaticResource mark}" Grid.ColumnSpan="3">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="30"/>
             </Rectangle.RenderTransform>
@@ -109,6 +120,25 @@
             </Rectangle.RenderTransform>
         </Rectangle>
 
-
+        <!--指针-->
+        <Rectangle x:Name="hour" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="45" Margin="116,75,0,0" VerticalAlignment="Top" Width="8" Stroke="#FF340C0C">
+            <Rectangle.RenderTransform>
+                <RotateTransform x:Name="hourPointer" CenterX="4" CenterY="45" Angle="60"></RotateTransform>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="minute" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="55" Margin="117,65,0,0" VerticalAlignment="Top" Width="6" Stroke="Black">
+            <Rectangle.RenderTransform>
+                <RotateTransform x:Name="minutePointer" CenterX="3" CenterY="55" Angle="30"></RotateTransform>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="second" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="65" Margin="119,55,0,0" VerticalAlignment="Top" Width="2" Stroke="Black">
+            <Rectangle.RenderTransform>
+                <RotateTransform x:Name="secondPointer" CenterX="1" CenterY="65" Angle="90"></RotateTransform>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Ellipse Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Fill="#FF135DA8" Width="30" Height="30" ></Ellipse>
+        <Label x:Name="mytime" Grid.Row="0" Grid.Column="1" Content="21:49" Margin="0,156,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label x:Name="mydate" Grid.Row="0" Grid.Column="1" Content="2018-1-1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,104,0,0"></Label>
+        
     </Grid>
 </Window>

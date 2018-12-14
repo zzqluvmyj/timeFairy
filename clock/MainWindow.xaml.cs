@@ -28,7 +28,7 @@ namespace WpfClock
             #region 初始化时间
             secondPointer.Angle = DateTime.Now.Second * 6;
             minutePointer.Angle = DateTime.Now.Minute * 6;
-            hourPointer.Angle = (DateTime.Now.Hour * 30) + (DateTime.Now.Minute * 0.5);
+            hourPointer.Angle = DateTime.Now.Hour * 30 + DateTime.Now.Minute * 0.5;
             this.labTime.Content = DateTime.Now.ToString("HH:mm:ss");
             #endregion
             timer.Elapsed += new System.Timers.ElapsedEventHandler(timer_Elapsed);
