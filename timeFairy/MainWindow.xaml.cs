@@ -24,5 +24,10 @@ namespace timeFairy
         {
             InitializeComponent();
         }
+
+        private void pressAndDrag(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

@@ -13,3 +13,4 @@ D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.csproj.GenerateResou
 D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.csproj.CoreCompileInputs.cache
 D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.exe
 D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.pdb
+D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy_Content.g.cs

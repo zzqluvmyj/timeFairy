@@ -5,73 +5,105 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:timeFairy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="280" Width="240"  AllowsTransparency="True" Background="{x:Null}" WindowStyle="None" WindowStartupLocation="Manual" Window.Left="1500" Window.Top="30" >
+        Title="MainWindow" Height="280" Width="240"  AllowsTransparency="True" Background="{x:Null}" WindowStyle="None" WindowStartupLocation="Manual" Window.Left="1500" Window.Top="30"
+        MouseLeftButtonDown="pressAndDrag">
+    <Window.Resources>
+        <Style TargetType="Rectangle" x:Key="mark">
+            <Setter Property="HorizontalAlignment" Value="left"></Setter>
+            <Setter Property="Height" Value="20"></Setter>
+            <Setter Property="Margin" Value="115,10,115,0"></Setter>
+            <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="Width" Value="10"></Setter>
+            <Setter Property="Fill" Value="Gray"></Setter>
+            <Setter Property="Stroke" Value="Aqua"></Setter>
+        </Style>
+        <Style TargetType="Rectangle" x:Key="mark3">
+            <Setter Property="HorizontalAlignment" Value="left"></Setter>
+            <Setter Property="Height" Value="20"></Setter>
+            <Setter Property="Margin" Value="115,10,115,0"></Setter>
+            <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="Width" Value="10"></Setter>
+            <Setter Property="Fill" Value="Black"></Setter>
+            <Setter Property="Stroke" Value="Aqua"></Setter>
+        </Style>
+        <Style TargetType="Ellipse" x:Key="clock">
+            <Setter Property="Fill" Value="#FFD1F1C2"></Setter>
+            <Setter Property="Height" Value="240"></Setter>
+            <Setter Property="Margin" Value="0"></Setter>
+            <Setter Property="Stroke" Value="#FF2F95DC"></Setter>
+            <Setter Property="Width" Value="240"></Setter>
+            <Setter Property="StrokeThickness" Value="10"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid Background="#00000000">
         <Grid.RowDefinitions>
             <RowDefinition Height="240px"/>
             <RowDefinition Height="40px"/>
         </Grid.RowDefinitions>
-        <Ellipse Fill="#FFD1F1C2" Height="240" Margin="0" Stroke="#FF2F95DC" Width="240" StrokeThickness="10"/>
+
         <Popup Grid.Row="1">
             <Grid Background="#FFA61212" Height="40" Width="240"/>
         </Popup>
         
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        
+        <!--表盘-->
+        <Ellipse Style="{StaticResource clock}"></Ellipse>
+        <Rectangle Style="{StaticResource mark3}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="0"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="30"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="60"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark3}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="90"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="120"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="150"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark3}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="180"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="210"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="240"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark3}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="270"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="300"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="20" Margin="115,10,115,0" VerticalAlignment="Top" Width="10" Fill="Black">
+        <Rectangle Style="{StaticResource mark}">
             <Rectangle.RenderTransform>
                 <RotateTransform CenterX="5" CenterY="110" Angle="330"/>
             </Rectangle.RenderTransform>
