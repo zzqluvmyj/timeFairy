@@ -26,6 +26,10 @@ namespace timeFairy
         //Timer 组件是基于服务器的计时器，它使您能够指定在应用程序中引发 Elapsed 事件的周期性间隔。然后可通过处理这个事件来提供常规处理。
         //这里是设定一千毫秒的计时器，必须为全局变量，负责有可能被系统回收
         System.Timers.Timer timer = new System.Timers.Timer(1000);
+        // 进程互斥
+        private System.Threading.Mutex myMutex = null;
+        private MenuWindow menuWindow = new MenuWindow();//创建菜单窗口的实例
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,6 +40,7 @@ namespace timeFairy
         {
             this.DragMove();
         }
+
         public void InitClock()
         {
             
@@ -64,6 +69,24 @@ namespace timeFairy
                  this.mydate.Content = DateTime.Now.ToString("d");
              }));
          }
+        //关闭当前应用程序的所有窗口
+        private void ApplicationClose(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        //判断是否存在menu窗口，如果存在，则激活即可，不用多次打开
+        private void OpenMenuWindow(object sender, RoutedEventArgs e)
+        {
+            if (menuWindow == null || menuWindow.IsVisible == false)
+            {
+                menuWindow.Show();
+            }
+            else
+            {
+                menuWindow.Activate();
+                menuWindow.WindowState = System.Windows.WindowState.Normal;
+            }
+        }
     }
 
 }

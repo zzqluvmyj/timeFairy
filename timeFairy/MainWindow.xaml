@@ -8,7 +8,7 @@
         Title="MainWindow" Height="280" Width="240"  AllowsTransparency="True" Background="{x:Null}" WindowStyle="None" WindowStartupLocation="Manual" Window.Left="1500" Window.Top="30"
         MouseLeftButtonDown="PressAndDrag">
     <Window.Resources>
-
+        <!--刻度，除了3,6,9,12-->
         <Style TargetType="Rectangle" x:Key="mark">
             <Setter Property="HorizontalAlignment" Value="left"></Setter>
             <Setter Property="Height" Value="20"></Setter>
@@ -19,6 +19,7 @@
             <Setter Property="Stroke" Value="Aqua"></Setter>
             <Setter Property="Grid.ColumnSpan" Value="3"></Setter>
         </Style>
+        <!--刻度，包含3,6,9,12-->
         <Style TargetType="Rectangle" x:Key="mark3">
             <Setter Property="HorizontalAlignment" Value="left"></Setter>
             <Setter Property="Height" Value="20"></Setter>
@@ -29,6 +30,7 @@
             <Setter Property="Stroke" Value="Aqua"></Setter>
             <Setter Property="Grid.ColumnSpan" Value="3"></Setter>
         </Style>
+        <!--钟表的表盘-->
         <Style TargetType="Ellipse" x:Key="clock">
             <Setter Property="Fill" Value="#FFD1F1C2"></Setter>
             <Setter Property="Height" Value="240"></Setter>
@@ -38,107 +40,172 @@
             <Setter Property="StrokeThickness" Value="10"></Setter>
             <Setter Property="Grid.ColumnSpan" Value="3"></Setter>
         </Style>
-
-    </Window.Resources>
-    <Grid Background="#00000000">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="240px"/>
-            <RowDefinition Height="40px"/>
-        </Grid.RowDefinitions>
-
-        <Popup Grid.Row="1">
-            <Grid Background="#FFA61212" Height="40" Width="240"/>
-        </Popup>
-
-
-        <!--表盘-->
-        <Ellipse Style="{StaticResource clock}" />
-        <!--表盘上的点-->
-        <Rectangle Style="{StaticResource mark3}" Grid.ColumnSpan="3">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="0"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark}" Grid.ColumnSpan="3">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="30"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark}">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="60"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark3}">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="90"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark}">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="120"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark}">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="150"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark3}">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="180"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark}">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="210"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark}">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="240"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark3}">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="270"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark}">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="300"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle Style="{StaticResource mark}">
-            <Rectangle.RenderTransform>
-                <RotateTransform CenterX="5" CenterY="110" Angle="330"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-
-        <!--指针-->
-        <Rectangle x:Name="hour" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="45" Margin="116,75,0,0" VerticalAlignment="Top" Width="8" Stroke="#FF340C0C">
-            <Rectangle.RenderTransform>
-                <RotateTransform x:Name="hourPointer" CenterX="4" CenterY="45" Angle="60"></RotateTransform>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle x:Name="minute" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="55" Margin="117,65,0,0" VerticalAlignment="Top" Width="6" Stroke="Black">
-            <Rectangle.RenderTransform>
-                <RotateTransform x:Name="minutePointer" CenterX="3" CenterY="55" Angle="30"></RotateTransform>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle x:Name="second" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="65" Margin="119,55,0,0" VerticalAlignment="Top" Width="2" Stroke="Black">
-            <Rectangle.RenderTransform>
-                <RotateTransform x:Name="secondPointer" CenterX="1" CenterY="65" Angle="90"></RotateTransform>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Ellipse Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Fill="#FF135DA8" Width="30" Height="30" ></Ellipse>
-        <Label x:Name="mytime" Grid.Row="0" Grid.Column="1" Content="21:49" Margin="0,156,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Label x:Name="mydate" Grid.Row="0" Grid.Column="1" Content="2018-1-1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,104,0,0"></Label>
+        <!--带有渐变色动画的椭圆形按钮-->
+        <Style x:Key="RoundedGelButton" TargetType="Button">
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Name="GelBackground" StrokeThickness="0.5" Fill="#B221B7EC" >
+                            </Ellipse>
+                            <ContentPresenter Name="GelButtonContent" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           Content="{TemplateBinding Content}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                  To="1" Duration="0:0:0.1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                  To="0.01" Duration="0:0:1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--简要菜单，主窗口的入口-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource RoundedGelButton}" Content="菜单" HorizontalAlignment="Left" Height="40" Margin="0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5" Click="OpenMenuWindow">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.09"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Style="{StaticResource RoundedGelButton}" Content="退出" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5" Click="ApplicationClose">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.436"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+        </Grid>
+
+        <!--放有钟表的grid-->
+        <Grid Background="#00000000"  Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="240px"/>
+            </Grid.RowDefinitions>
+            <!--表盘-->
+            <Ellipse Style="{StaticResource clock}" Fill="#B2D1F1C2" />
+            <!--表盘上的点-->
+            <Rectangle Style="{StaticResource mark3}" Grid.ColumnSpan="3">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="0"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark}" Grid.ColumnSpan="3">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="30"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark}">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="60"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark3}">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="90"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark}">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="120"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark}">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="150"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark3}">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="180"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark}">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="210"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark}">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="240"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark3}">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="270"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark}">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="300"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Style="{StaticResource mark}">
+                <Rectangle.RenderTransform>
+                    <RotateTransform CenterX="5" CenterY="110" Angle="330"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
+            <!--指针-->
+            <Rectangle x:Name="hour" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="45" Margin="116,75,0,0" VerticalAlignment="Top" Width="8" Stroke="#FF340C0C">
+                <Rectangle.RenderTransform>
+                    <RotateTransform x:Name="hourPointer" CenterX="4" CenterY="45" Angle="60"></RotateTransform>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="minute" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="55" Margin="117,65,0,0" VerticalAlignment="Top" Width="6" Stroke="Black">
+                <Rectangle.RenderTransform>
+                    <RotateTransform x:Name="minutePointer" CenterX="3" CenterY="55" Angle="30"></RotateTransform>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="second" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="65" Margin="119,55,0,0" VerticalAlignment="Top" Width="2" Stroke="Black">
+                <Rectangle.RenderTransform>
+                    <RotateTransform x:Name="secondPointer" CenterX="1" CenterY="65" Angle="90"></RotateTransform>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Ellipse Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Fill="#BF135DA8" Width="30" Height="30" ></Ellipse>
+            <Label x:Name="mytime" Grid.Row="0" Grid.Column="1" Content="21:49" Margin="0,156,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+            <Label x:Name="mydate" Grid.Row="0" Grid.Column="1" Content="2018-1-1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,104,0,0" FontWeight="Bold"></Label>
+        </Grid>
     </Grid>
+
 </Window>

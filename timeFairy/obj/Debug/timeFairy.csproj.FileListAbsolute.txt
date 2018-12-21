@@ -13,3 +13,5 @@ D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.csproj.CoreCompileIn
 D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.exe
 D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.pdb
 D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.csprojAssemblyReference.cache
+D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\MenuWindow.g.cs
+D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\MenuWindow.baml

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "timeFairy", "timeFairy\time
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clock", "clock\clock.csproj", "{FC616144-6C3F-4368-8A19-9C6FB7702E1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopupTest", "PopupTest\PopupTest.csproj", "{BCB7927F-AA95-4809-8F55-3F18A66C81C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FC616144-6C3F-4368-8A19-9C6FB7702E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC616144-6C3F-4368-8A19-9C6FB7702E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC616144-6C3F-4368-8A19-9C6FB7702E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCB7927F-AA95-4809-8F55-3F18A66C81C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB7927F-AA95-4809-8F55-3F18A66C81C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB7927F-AA95-4809-8F55-3F18A66C81C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB7927F-AA95-4809-8F55-3F18A66C81C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
