@@ -87,6 +87,7 @@ namespace timeFairy
                 menuWindow.WindowState = System.Windows.WindowState.Normal;
             }
         }
+
     }
 
 }

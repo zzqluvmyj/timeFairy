@@ -23,5 +23,11 @@ namespace timeFairy
         {
             InitializeComponent();
         }
+        //防止出现打开新窗口关闭后无法再次打开新窗口的问题
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }
