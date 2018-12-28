@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -11,7 +12,7 @@ namespace timeFairy
     class FileMethod
     {
         //实例化对象列表,保存到文件
-        public static void SaveThings(string filename, List<Thing> things)
+        public static void SaveThings(string filename, ObservableCollection<Thing> things)
         {
             FileStream fs = new FileStream(filename, FileMode.Create);
             BinaryFormatter bf = new BinaryFormatter();
@@ -19,11 +20,11 @@ namespace timeFairy
             fs.Close();
         }
         //反实例化对象列表，读出文件到对象
-        public static List<Thing> ReadThings(string filename)
+        public static ObservableCollection<Thing> ReadThings(string filename)
         {
             FileStream fs = new FileStream(filename, FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
-            List<Thing> things = bf.Deserialize(fs) as List<Thing>;
+            ObservableCollection<Thing> things = bf.Deserialize(fs) as ObservableCollection<Thing>;
             fs.Close();
             return things;
         }

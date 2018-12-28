@@ -89,7 +89,7 @@ namespace TestCollection
             this.lbStudent.DataContext = viewModel;
 
         }
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void Button1_Click(object sender, RoutedEventArgs e)
         {
             viewModel.StudentList[1] = new Students() { Id = 4, Age = 14, Name = "这是一个集合改变" };
 

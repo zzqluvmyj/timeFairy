@@ -57,6 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="FileMethod.cs" />
+    <Compile Include="ObservableThings.cs" />
     <Compile Include="PriorityType.cs" />
     <Compile Include="Thing.cs" />
     <Compile Include="ViewModel.cs" />

@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace timeFairy
 {
+    [Serializable]
     public class ViewModel : INotifyPropertyChanged
     {
+
         private ObservableCollection<Thing> thingsList;
         public ObservableCollection<Thing> ThingsList
         {

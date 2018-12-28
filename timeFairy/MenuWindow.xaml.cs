@@ -23,18 +23,16 @@ namespace timeFairy
     /// </summary>
     public partial class MenuWindow : Window
     {
+
         ViewModel viewModel = new ViewModel();
         public MenuWindow()
         {
             InitializeComponent();
-            viewModel.ThingsList = new ObservableCollection<Thing>
-            {
-                new Thing("上厕所",DateTime.Now,DateTime.Now),
-                new Thing("睡觉",DateTime.Now,DateTime.Now),
-                new Thing("吃饭",DateTime.Now,DateTime.Now),
-                new Thing("玩游戏",DateTime.Now,DateTime.Now)
-            };
+
             this.AllThings.DataContext = viewModel;
+
+            viewModel.ThingsList = FileMethod.ReadThings("file.dat");
+
         }
 
 

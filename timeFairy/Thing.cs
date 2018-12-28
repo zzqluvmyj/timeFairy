@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace timeFairy
 {
+    [Serializable]
     public class Thing : INotifyPropertyChanged, IEditableObject
     {
         //分别为名称，备注，开始时间，结束时间，标记，优先级
+        [Serializable]
         private struct ThingItem
         {
             internal string Name;
@@ -134,4 +136,5 @@ namespace timeFairy
             Notify("");
         }
     }
+
 }
