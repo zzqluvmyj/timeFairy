@@ -207,5 +207,4 @@
             <Label x:Name="mydate" Grid.Row="0" Grid.Column="1" Content="2018-1-1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,104,0,0" FontWeight="Bold"></Label>
         </Grid>
     </Grid>
-
 </Window>

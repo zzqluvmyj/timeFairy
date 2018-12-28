@@ -1,0 +1,14 @@
+D:\cangku\c#program\timeFairy\clock\bin\Release\clock.exe.config
+D:\cangku\c#program\timeFairy\clock\bin\Release\clock.exe
+D:\cangku\c#program\timeFairy\clock\bin\Release\clock.pdb
+D:\cangku\c#program\timeFairy\clock\obj\Release\clock.csprojAssemblyReference.cache
+D:\cangku\c#program\timeFairy\clock\obj\Release\MainWindow.baml
+D:\cangku\c#program\timeFairy\clock\obj\Release\MainWindow.g.cs
+D:\cangku\c#program\timeFairy\clock\obj\Release\App.g.cs
+D:\cangku\c#program\timeFairy\clock\obj\Release\clock_MarkupCompile.cache
+D:\cangku\c#program\timeFairy\clock\obj\Release\clock.g.resources
+D:\cangku\c#program\timeFairy\clock\obj\Release\clock.Properties.Resources.resources
+D:\cangku\c#program\timeFairy\clock\obj\Release\clock.csproj.GenerateResource.cache
+D:\cangku\c#program\timeFairy\clock\obj\Release\clock.csproj.CoreCompileInputs.cache
+D:\cangku\c#program\timeFairy\clock\obj\Release\clock.exe
+D:\cangku\c#program\timeFairy\clock\obj\Release\clock.pdb

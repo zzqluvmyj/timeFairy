@@ -1,0 +1,15 @@
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\MainWindow.g.cs
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\App.g.cs
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\TestCollection_MarkupCompile.cache
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\TestCollection_MarkupCompile.lref
+D:\cangku\c#program\timeFairy\TestCollection\bin\Debug\TestCollection.exe.config
+D:\cangku\c#program\timeFairy\TestCollection\bin\Debug\TestCollection.exe
+D:\cangku\c#program\timeFairy\TestCollection\bin\Debug\TestCollection.pdb
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\MainWindow.baml
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\TestCollection.g.resources
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\TestCollection.Properties.Resources.resources
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\TestCollection.csproj.GenerateResource.cache
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\TestCollection.csproj.CoreCompileInputs.cache
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\TestCollection.exe
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\TestCollection.pdb
+D:\cangku\c#program\timeFairy\TestCollection\obj\Debug\TestCollection.csprojAssemblyReference.cache
