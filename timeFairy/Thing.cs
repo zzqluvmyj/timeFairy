@@ -19,7 +19,7 @@ namespace timeFairy
             internal DateTime StartTime;
             internal DateTime EndTime;
             internal string Kind;
-            internal PriorityType Priority;
+            internal string Priority;
         }
         private ThingItem copyThing;
         private ThingItem currentThing;
@@ -27,7 +27,7 @@ namespace timeFairy
             :this("",DateTime.Now,DateTime.Now,"")
         { }
 
-        public Thing(string name, DateTime startTime, DateTime endTime, string kind="备忘", PriorityType priority= PriorityType.NN, string etc="")
+        public Thing(string name, DateTime startTime, DateTime endTime, string kind="备忘", string priority="普通", string etc="")
         {
             Name = name;
             Etc = etc;
@@ -96,7 +96,7 @@ namespace timeFairy
                 }
             }
         }
-        public PriorityType Priority
+        public string Priority
         {
             get { return currentThing.Priority; }
             set
@@ -113,6 +113,8 @@ namespace timeFairy
         public override string ToString() => $"{Name}, {Etc}, {StartTime:D},{EndTime:D},{Kind},{Priority}";
 
         //实现了事件提醒的接口，用于数据绑定
+        //为了防止报错：未实现Inotify接口的PropertyChanged属性
+        [field: NonSerializedAttribute()]
         public event PropertyChangedEventHandler PropertyChanged;
         private void Notify(string info)
         {

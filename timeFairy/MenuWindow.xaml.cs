@@ -25,13 +25,46 @@ namespace timeFairy
     {
 
         ViewModel viewModel = new ViewModel();
+        ObservableCollection<Thing> ListToCollection(List<Thing> tempList)
+        {
+            ObservableCollection<Thing> tempCollection = new ObservableCollection<Thing>();
+            tempList.ForEach(p => tempCollection.Add(p));
+            return tempCollection;
+        }
+        List<Thing> CollectionToList(ObservableCollection<Thing> tempCollection)
+        {
+            List<Thing> tempList = new List<Thing>();
+            tempList = tempCollection.ToList();
+            return tempList;
+        }
+
         public MenuWindow()
         {
             InitializeComponent();
 
             this.AllThings.DataContext = viewModel;
+            //viewModel.ThingsList = new ObservableCollection<Thing>() {
+            //new Thing("SDF",DateTime.Now,DateTime.Now),
+            //new Thing("DB",DateTime.Now,DateTime.Now),
+            //new Thing("DSF",DateTime.Now,DateTime.Now),
+            //new Thing("SFB",DateTime.Now,DateTime.Now)
+            //};
+            
+            List<Thing> tlist = new List<Thing>
+            {
+            new Thing("SDF",DateTime.Now,DateTime.Now),
+            new Thing("DB",DateTime.Now,DateTime.Now),
+            new Thing("DSF",DateTime.Now,DateTime.Now),
+            new Thing("SFB",DateTime.Now,DateTime.Now)
+            };
+            FileMethod.SaveThings("..//..//storage//file.dat", tlist);
+            List<Thing> tlist1= FileMethod.ReadThings("..//..//storage//file.dat");
+            viewModel.ThingsList = ListToCollection(tlist1);
 
-            viewModel.ThingsList = FileMethod.ReadThings("file.dat");
+
+
+
+
 
         }
 
@@ -45,6 +78,8 @@ namespace timeFairy
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+            List<Thing> tlist = CollectionToList(viewModel.ThingsList);
+            FileMethod.SaveThings("..//..//storage//f1.dat", tlist);
 
         }
 

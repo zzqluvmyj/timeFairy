@@ -11,3 +11,4 @@ D:\cangku\c#program\timeFairy\clock\obj\Debug\clock.csproj.GenerateResource.cach
 D:\cangku\c#program\timeFairy\clock\obj\Debug\clock.csproj.CoreCompileInputs.cache
 D:\cangku\c#program\timeFairy\clock\obj\Debug\clock.exe
 D:\cangku\c#program\timeFairy\clock\obj\Debug\clock.pdb
+D:\cangku\c#program\timeFairy\clock\obj\Debug\clock.csprojAssemblyReference.cache
