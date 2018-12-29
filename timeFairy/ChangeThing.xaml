@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:timeFairy"
         mc:Ignorable="d"
-        Title="添加事件" Height="300" Width="300">
+        Title="新事件" Height="300" Width="300">
     <StackPanel Margin="10" Width="250">
         <StackPanel.Resources>
             <Style TargetType="HeaderedContentControl">
@@ -20,12 +20,10 @@
                                 <ContentPresenter ContentSource="Content" Margin="5,0,0,0" 
                                   DockPanel.Dock="Right" VerticalAlignment="Center"/>
                             </DockPanel>
-
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
             </Style>
-
             <Style TargetType="Button">
                 <Setter Property="Width" Value="100"/>
                 <Setter Property="Margin" Value="10,15,15,15"/>
@@ -36,18 +34,25 @@
         <HeaderedContentControl Header="名称">
             <TextBox Width="150" Text="{Binding Path=Name, Mode=TwoWay}"/>
         </HeaderedContentControl>
-        <HeaderedContentControl Header="种类">
-            <TextBox Width="150" Text="{Binding Path=Etc, Mode=TwoWay}"/>
-        </HeaderedContentControl>
         <HeaderedContentControl Header="优先级">
             <TextBox Width="150" Text="{Binding Path=Priority, StringFormat=d, Mode=TwoWay}"/>
         </HeaderedContentControl>
+        <HeaderedContentControl Header="种类">
+            <TextBox Width="150" Text="{Binding Path=Kind, StringFormat=d, Mode=TwoWay}"/>
+        </HeaderedContentControl>
+        <HeaderedContentControl Header="开始时间">
+            <TextBox Width="150" Text="{Binding Path=StartTime, Mode=TwoWay}"/>
+        </HeaderedContentControl>
+        <HeaderedContentControl Header="结束时间">
+            <TextBox Width="150" Text="{Binding Path=EndTime, StringFormat=d, Mode=TwoWay}"/>
+        </HeaderedContentControl>
+        
         <HeaderedContentControl Header="备注">
             <TextBox Width="150" Text="{Binding Path=Etc, StringFormat=d, Mode=TwoWay}"/>
         </HeaderedContentControl>
         <StackPanel Orientation="Horizontal">
-            <Button IsDefault="True" Click="Submit_Click">_Submit</Button>
-            <Button IsCancel="True">_Cancel</Button>
+            <Button IsDefault="True" Click="Submit_Click">提交</Button>
+            <Button IsCancel="True">返回</Button>
         </StackPanel>
     </StackPanel>
 </Window>

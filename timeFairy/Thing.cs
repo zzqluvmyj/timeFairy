@@ -10,7 +10,7 @@ namespace timeFairy
     [Serializable]
     public class Thing : INotifyPropertyChanged, IEditableObject
     {
-        //分别为名称，备注，开始时间，结束时间，标记，优先级
+        //分别为名称，备注，开始时间，结束时间，种类，优先级
         [Serializable]
         private struct ThingItem
         {
@@ -24,7 +24,7 @@ namespace timeFairy
         private ThingItem copyThing;
         private ThingItem currentThing;
         public Thing()
-            :this("",DateTime.Now,DateTime.Now,"")
+            :this("",DateTime.Now,DateTime.Now)
         { }
 
         public Thing(string name, DateTime startTime, DateTime endTime, string kind="备忘", string priority="普通", string etc="")

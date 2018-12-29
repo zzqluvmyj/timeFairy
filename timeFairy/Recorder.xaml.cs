@@ -4,53 +4,46 @@ using System.Windows.Threading;
 
 namespace timeFairy
 {
-    /// <summary>
-    /// MainWindow.xaml 的交互逻辑
-    /// </summary>
+    //使用回调函数返回子窗口的计时数据
+    
+   
     public partial class Recorder : Window
     {
-        /// <summary>
-        /// 状态
-        /// </summary>
+        public DelegateClass.delegateMinute CallBackMethod;
         enum State
         {
             Start,
             Pause,
             End
         }
-
-        /// <summary>
-        /// 状态
-        /// </summary>
-        State _state = State.End;
-
-        /// <summary>
-        /// 计时用
-        /// </summary>
-        TimeSpan _timeSpan = new TimeSpan(0, 0, 0, 0, 0);
-
-        public Recorder()
+        State state = State.End;
+        private TimeSpan timeLength = new TimeSpan(0, 0, 0, 0);
+        private Thing thing;
+        public TimeSpan TimeLength
         {
+            get { return timeLength; }
+            set { timeLength = value; }
+        }
+
+        public Recorder(Thing thing)
+        {
+            
             InitializeComponent();
             var t = new DispatcherTimer();
             t.Interval = new TimeSpan(0, 0, 0, 1);
             t.Tick += OnTimer;
             t.IsEnabled = true;
             t.Start();
+            this.thing = thing;
         }
 
-        /// <summary>
-        /// 时钟回调
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         void OnTimer(object sender, EventArgs e)
         {
-            switch (_state)
+            switch (state)
             {
                 case State.Start:
                     {
-                        _timeSpan += new TimeSpan(0, 0, 0, 1);
+                        timeLength += new TimeSpan(0, 0, 0, 1);
                     }
                     break;
                 case State.Pause:
@@ -60,52 +53,37 @@ namespace timeFairy
                     break;
                 case State.End:
                     {
-                        _timeSpan = new TimeSpan();
-                        //_timeSpan = new TimeSpan(0, 23, 12, 45, 54);
+
+                        timeLength = new TimeSpan();
                     }
                     break;
             }
 
-            var time = string.Format("{0:D2}:{1:D2}:{2:D2}", _timeSpan.Hours, _timeSpan.Minutes, _timeSpan.Seconds);
+            var time = string.Format("{0:D2}:{1:D2}:{2:D2}", timeLength.Hours, timeLength.Minutes, timeLength.Seconds);
             textBox.Text = time;
+            label.Content = time;
         }
 
-        /// <summary>
-        /// 退出
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Close_Click(object sender, RoutedEventArgs e)
         {
+            CallBackMethod(timeLength,thing);
             Close();
         }
 
-        /// <summary>
-        /// 开始
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Start_Click(object sender, RoutedEventArgs e)
         {
-            _state = State.Start;
+            state = State.Start;
         }
-        /// <summary>
-        /// 暂停
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void Pause_Click(object sender, RoutedEventArgs e)
         {
-            _state = State.Pause;
+            state = State.Pause;
         }
-        /// <summary>
-        /// 停止
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void End_Click(object sender, RoutedEventArgs e)
         {
-            _state = State.End;
+            state = State.End;
         }
+
     }
 }

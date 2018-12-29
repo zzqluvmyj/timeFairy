@@ -18,7 +18,6 @@
                 </TabItem.Background>
                 <Grid>
                     <StackPanel>
-
                         <ListView Name="AllThings" ItemsSource="{Binding ThingsList, Mode=TwoWay}">
                             <ListView.View>
                                 <GridView>
@@ -41,23 +40,36 @@
                             <Button Name="add" Click="Add_Click">Add</Button>
                             <Button Name="edit" Click="Edit_Click">Edit</Button>
                             <Button Name="remove" Click="Remove_Click">Remove</Button>
+                            <Button Name="record" Click="Record_Click">计时</Button>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="新事件">
+            <TabItem Header="记录">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                        <GradientStop Color="#FF6DFADA" Offset="0"/>
-                        <GradientStop Color="#FF138159" Offset="1"/>
-                        <GradientStop Color="#FF8AD8C6" Offset="0.466"/>
+                        <GradientStop Color="#FF99F0B4" Offset="0"/>
+                        <GradientStop Color="#FF3EA60D" Offset="0.507"/>
+                        <GradientStop Color="#FF549308" Offset="1"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid>
-                    <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="120,341.332,0,0"/>
-                    <Calendar HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <Calendar HorizontalAlignment="Left" VerticalAlignment="Top" Margin="184,0,0,0"/>
-
+                    <ListView Name="AllNotes" ItemsSource="{Binding NotesList, Mode=TwoWay}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="序号"
+                          DisplayMemberBinding="{Binding Path=Id}"/>
+                                <GridViewColumn Header="名称"
+                          DisplayMemberBinding="{Binding Path=Name}"/>
+                                <GridViewColumn Header="时长"
+                          DisplayMemberBinding="{Binding Path=M}"/>
+                                <GridViewColumn Header="预期时间"
+                          DisplayMemberBinding="{Binding Path=ExpectTime}"/>
+                                <GridViewColumn Header="实际时间"
+                          DisplayMemberBinding="{Binding Path=ActualTime}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </Grid>
             </TabItem>
             <TabItem Header="统计">

@@ -15,3 +15,7 @@ D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.exe
 D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.pdb
 D:\cangku\c#program\timeFairy\timeFairy\bin\Debug\timeFairy.pdb
 D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\timeFairy.csprojAssemblyReference.cache
+D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\ChangeThing.g.cs
+D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\ChangeThing.baml
+D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\Recorder.g.cs
+D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\Recorder.baml

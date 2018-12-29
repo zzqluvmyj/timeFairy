@@ -7,11 +7,14 @@
         mc:Ignorable="d"
         Title="Recorder" Height="450" Width="800">
     <Grid>
-        <TextBox Name="textBox" HorizontalAlignment="Left" Height="53.917" Margin="128.719,132.677,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="282.028"/>
-        <Button Click="Start_Click" Content="开始" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,52.5,0,0"/>
-        <Button Click="Pause_Click" Content="暂停" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="124.5,52.5,0,0"/>
-        <Button Click="End_Click" Content="结束" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="252.5,52.5,0,0"/>
-        <Button Click="Close_Click" Content="退出" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="377,52.5,0,0"/>
+        
+        <TextBox Name="textBox" HorizontalAlignment="Left" Height="43.851" Margin="192.288,187.038,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Width="137.819"/>
+        <Button Content="开始" Click="Start_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="69.954,146.171,0,0"/>
+        <Button Content="暂停" Click="Pause_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="238.051,146.171,0,0"/>
+        <Button Content="清零" Click="End_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="380.047,146.171,0,0"/>
+        <Button Content="完成" Click="Close_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="509.512,146.171,0,0"/>
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+        <Label Name="label" Content="00:00:00" HorizontalAlignment="Left" Height="40.719" Margin="125.466,262.211,0,0" VerticalAlignment="Top" Width="146.172"/>
 
     </Grid>
 </Window>

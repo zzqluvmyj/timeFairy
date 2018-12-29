@@ -13,6 +13,22 @@ namespace timeFairy
     {
 
         private ObservableCollection<Thing> thingsList;
+        private ObservableCollection<Note> notesList;
+
+        public ObservableCollection<Note> NotesList
+        {
+            get { return this.notesList; }
+            set
+            {
+                if (this.notesList != value)
+                {
+                    this.notesList = value;
+                    NotifyPropertyChanged("NotesList");
+                }
+                
+            }
+        }
+
         public ObservableCollection<Thing> ThingsList
         {
             get
@@ -28,6 +44,7 @@ namespace timeFairy
                 }
             }
         }
+
         //为了防止报错：未实现Inotify接口的PropertyChanged属性
         [field: NonSerializedAttribute()]
         public event PropertyChangedEventHandler PropertyChanged;
