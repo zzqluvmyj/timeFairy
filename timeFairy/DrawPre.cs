@@ -25,13 +25,17 @@ namespace timeFairy
     //var shapes = PieChartDrawer.GetPieChartShapes(p, 150, 0,sectorParts, ringParts);
     class DrawPre
     {
-        public static List<double> listd=new List<double>();
-        public static List<String> lists = new List<String>();
-        public static int l=0;
+        public static List<double> listd=new List<double>();//时间
+        public static List<String> lists = new List<String>();//名称
+        public static List<double> lista=new List<double>();//角度
+        public static List<int> listn = new List<int>();//事件序号
+        public static int l=0;//扇形的数量
         public static void ClearUp()
         {
             listd.Clear();
             lists.Clear();
+            lista.Clear();
+            listn.Clear();
             l = 0;
         }
         public static List<SolidColorBrush> color = new List<SolidColorBrush>
@@ -53,16 +57,37 @@ namespace timeFairy
         public static void getList(ObservableCollection<Note> notes)
         {
             double max = 0;
+            int index1;
+            int index2;
+            //在记录中找重复的，重复的条件是名称和事件序号相同
             foreach (Note item in notes)
             {
                 max += item.M;
-                lists.Add(item.Name);
-                l += 1;
+                index1 = lists.IndexOf(item.Name);
+                if (index1 > -1)
+                {
+                    index2 = listn.IndexOf(item.Thingid);
+                    if (index2 > -1)
+                    {
+                        if (index1 == index2)
+                        {
+                            listd[index1] += item.M;
+                        }
+                    }
+                }
+                else
+                {
+                    listd.Add(item.M);
+                    lists.Add(item.Name);
+                    listn.Add(item.Thingid);
+                    l += 1;
+                }
             }
-            foreach (Note item in notes)
+            for (int i = 0; i < l; i++)
             {
-                listd.Add(item.M / max * 360);
+                lista.Add(listd[i] / max * 360);
             }
+
         }
         public static IEnumerable<Shape> GetShapes()
         {

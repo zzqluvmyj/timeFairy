@@ -14,28 +14,32 @@ namespace timeFairy
         //时长为秒，因为在实际测试中等不了太长时间
         //后期有空可以在显示的时候将秒转换为时分，但实际的单位仍然是秒
         private string name;
-        private static double id=0;
+        private static int id;
         private double m;
         private DateTime actualTime;
         private DateTime expectTime;
+        private int thingid;
 
-
-
-        public Note(string name,double m, DateTime actualTime, DateTime expectTime)
+        public Note(int id,string name,double m, DateTime actualTime, DateTime expectTime,int thingid)
         {
             Name = name;
             Id = id+1;
             M = m;
             ActualTime = actualTime;
             ExpectTime = expectTime;
+            Thingid = thingid;
         }
-
+        public int Thingid
+        {
+            get { return thingid; }
+            set { thingid = value; Notify("Thingid"); }
+        }
         public string Name
         {
             get { return name; }
             set { name = value;Notify("Name"); }
         }
-        public double Id
+        public int Id
         {
             get { return id; }
             set { id = value;Notify("Id"); }

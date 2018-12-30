@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:timeFairy"
         mc:Ignorable="d"
         
-        Title="时间精灵" Height="450" Width="600">
+        Title="时间精灵" Height="450" Width="800">
     <Grid>
-        <TabControl Height="419" Width="592" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Padding="5" Margin="5">
+        <TabControl VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Padding="5" Margin="5">
             <TabItem Header="事件集" Height="20" HorizontalAlignment="Center" OpacityMask="#FF756ABF">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -85,33 +85,19 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Canvas Name="canvas" Grid.Column="1" Width="480" Height="360">
                     </Canvas>
-                    <StackPanel Name="stack" Width="120">
+                    <WrapPanel Grid.Column="2" Name="wrap">
+                        
+                    </WrapPanel>
+                    <StackPanel Grid.Column="0" Name="stack">
+                        <Calendar Name="calendar"></Calendar>
                         <Button Click="Draw_Click">绘图</Button>
-                        <Button>fdsf</Button>
-                        <Button>fsdf</Button>
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="成就">
-                <TabItem.Background>
-                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                        <GradientStop Color="#FF9CECFB" Offset="0"/>
-                        <GradientStop Color="#FF1D00D4" Offset="1"/>
-                        <GradientStop Color="#FF65C7F7" Offset="0.507"/>
-                    </LinearGradientBrush>
-                </TabItem.Background>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="17*"/>
-                        <ColumnDefinition Width="276*"/>
-                    </Grid.ColumnDefinitions>
-
-                </Grid>
-            </TabItem>
-
 
         </TabControl>
 

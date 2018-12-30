@@ -8,27 +8,28 @@ using System.Threading.Tasks;
 namespace timeFairy
 {
     [Serializable]
-    public class Thing : INotifyPropertyChanged, IEditableObject
+    public class Thing : INotifyPropertyChanged
     {
         //分别为名称，备注，开始时间，结束时间，种类，优先级
-        [Serializable]
-        private struct ThingItem
-        {
-            internal int Thingid;
-            internal string Name;
-            internal string Etc;
-            internal DateTime StartTime;
-            internal DateTime EndTime;
-            internal string Kind;
-            internal string Priority;
-        }
-        private ThingItem copyThing;
-        private ThingItem currentThing;
-        public Thing()
-            :this("",DateTime.Now,DateTime.Now)
-        { }
 
-        public Thing(string name, DateTime startTime, DateTime endTime, string kind="备忘", string priority="普通", string etc="")
+        private int thingid;
+        private string name;
+        private string etc;
+        private DateTime startTime;
+        private DateTime endTime;
+        private string kind;
+        private string priority;
+
+        public Thing()
+        {
+            Name = "";
+            StartTime = DateTime.Now;
+            EndTime = DateTime.Now;
+            Kind = "备忘";
+            Priority = "普通";
+            Etc = "";
+        }
+        public Thing(int thingid,string name, DateTime startTime, DateTime endTime, string kind="备忘", string priority="普通", string etc="")
         {
             Name = name;
             Etc = etc;
@@ -36,94 +37,95 @@ namespace timeFairy
             EndTime = endTime;
             Kind = kind;
             Priority = priority;
+            Thingid = thingid;
         }
 
         public string Name {
-            get { return currentThing.Name; }
+            get { return name; }
             set
             {
-                if(currentThing.Name!=value)
+                if(name!=value)
                 {
-                    currentThing.Name = value;
+                    name = value;
                     Notify("Name");
                 }
             }
         }
         public string Etc
         {
-            get { return currentThing.Etc; }
+            get { return etc; }
             set
             {
-                if (currentThing.Etc != value)
+                if (etc != value)
                 {
-                    currentThing.Etc = value;
+                    etc = value;
                     Notify("Etc");
                 }
             }
         }
         public DateTime StartTime
         {
-            get { return currentThing.StartTime; }
+            get { return startTime; }
             set
             {
-                if (currentThing.StartTime != value)
+                if (startTime != value)
                 {
-                    currentThing.StartTime = value;
+                    startTime = value;
                     Notify("StartTime");
                 }
             }
         }
         public DateTime EndTime
         {
-            get { return currentThing.EndTime; }
+            get { return endTime; }
             set
             {
-                if (currentThing.EndTime != value)
+                if (endTime != value)
                 {
-                    currentThing.EndTime = value;
+                    endTime = value;
                     Notify("EndTime");
                 }
             }
         }
         public string Kind
         {
-            get { return currentThing.Kind; }
+            get { return kind; }
             set
             {
-                if (currentThing.Kind != value)
+                if (kind != value)
                 {
-                    currentThing.Kind = value;
+                    kind = value;
                     Notify("Kind");
                 }
             }
         }
         public int Thingid
         {
-            get { return currentThing.Thingid; }
+            get { return thingid; }
             set
             {
-                if (currentThing.Thingid != value)
+                if (thingid != value)
                 {
-                    currentThing.Thingid = value;
+                    thingid = value;
                     Notify("Thingid");
                 }
             }
         }
         public string Priority
         {
-            get { return currentThing.Priority; }
+            get { return priority; }
             set
             {
-                if (currentThing.Priority != value)
+                if (priority != value)
                 {
-                    currentThing.Priority = value;
+                    priority = value;
                     Notify("Priority");
                 }
             }
         }
 
 
-        public override string ToString() => $"{Name}, {Etc}, {StartTime:D},{EndTime:D},{Kind},{Priority}";
+        public override string ToString() => $"{Name}, {Etc}, {StartTime:d},{EndTime:d},{Kind},{Priority}";
 
         //实现了事件提醒的接口，用于数据绑定
         //为了防止报错：未实现Inotify接口的PropertyChanged属性
@@ -133,22 +135,6 @@ namespace timeFairy
         {
             var handler = PropertyChanged;
             handler?.Invoke(this, new PropertyChangedEventArgs(info));
-        }
-
-        public void BeginEdit()
-        {
-            copyThing = currentThing;
-        }
-
-        public void EndEdit()
-        {
-            copyThing = new ThingItem();
-        }
-
-        public void CancelEdit()
-        {
-            currentThing = copyThing;
-            Notify("");
         }
     }
 }

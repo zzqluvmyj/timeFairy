@@ -1,4 +1,4 @@
-﻿<Window x:Class="timeFairy.ChangeThing"
+﻿<Window x:Class="timeFairy.AddThing"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -38,17 +38,17 @@
             <TextBox Name="priority" Width="150" Text="{Binding Path=Priority, StringFormat=d, Mode=TwoWay}"/>
         </HeaderedContentControl>
         <HeaderedContentControl Header="种类">
-            <TextBox Name="kind" Width="150" Text="{Binding Path=Kind, StringFormat=d, Mode=TwoWay}"/>
+            <TextBox Width="150" Text="{Binding Path=Kind, StringFormat=d, Mode=TwoWay}"/>
         </HeaderedContentControl>
         <HeaderedContentControl Header="开始时间">
-            <TextBox Name="starttime" Width="150" Text="{Binding Path=StartTime, Mode=TwoWay}"/>
+            <TextBox Width="150" Text="{Binding Path=StartTime, Mode=TwoWay}"/>
         </HeaderedContentControl>
         <HeaderedContentControl Header="结束时间">
-            <TextBox Width="150" Name="endtime" Text="{Binding Path=EndTime, StringFormat=d, Mode=TwoWay}"/>
+            <TextBox Width="150" Text="{Binding Path=EndTime, StringFormat=d, Mode=TwoWay}"/>
         </HeaderedContentControl>
-        
+
         <HeaderedContentControl Header="备注">
-            <TextBox Width="150" Name="etc" Text="{Binding Path=Etc, StringFormat=d, Mode=TwoWay}"/>
+            <TextBox Width="150" Text="{Binding Path=Etc, StringFormat=d, Mode=TwoWay}"/>
         </HeaderedContentControl>
         <StackPanel Orientation="Horizontal">
             <Button IsDefault="True" Click="Submit_Click">提交</Button>

@@ -74,6 +74,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddThing.xaml.cs">
+      <DependentUpon>AddThing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ChangeThing.xaml.cs">
       <DependentUpon>ChangeThing.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
     </Compile>
     <Compile Include="Thing.cs" />
     <Compile Include="ViewModel.cs" />
+    <Page Include="AddThing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChangeThing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

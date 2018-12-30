@@ -9,7 +9,7 @@ namespace timeFairy
    
     public partial class Recorder : Window
     {
-        public DelegateClass.delegateMinute CallBackMethod;
+        public DelegateClass.delegateTime CallBackTime;
         enum State
         {
             Start,
@@ -66,7 +66,7 @@ namespace timeFairy
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            CallBackMethod(timeLength,thing);
+            CallBackTime(timeLength.TotalSeconds,thing);
             Close();
         }
 

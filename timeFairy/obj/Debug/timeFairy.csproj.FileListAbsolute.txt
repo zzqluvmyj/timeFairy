@@ -38,3 +38,5 @@ D:\cangku\c#program\timeFairy\timeFairy\bin\Debug\sv\Xceed.Wpf.AvalonDock.resour
 D:\cangku\c#program\timeFairy\timeFairy\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\test.g.cs
 D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\test.baml
+D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\AddThing.g.cs
+D:\cangku\c#program\timeFairy\timeFairy\obj\Debug\AddThing.baml

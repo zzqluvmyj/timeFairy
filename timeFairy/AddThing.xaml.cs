@@ -17,26 +17,19 @@ namespace timeFairy
     /// <summary>
     /// ChangeThing.xaml 的交互逻辑
     /// </summary>
-    public partial class ChangeThing : Window
+    public partial class AddThing : Window
     {
         private Thing thing;
         public DelegateClass.delegateThing CallBackThing;
-        public ChangeThing()
+        public AddThing()
         {
             InitializeComponent();
             thing = new Thing();
+            this.DataContext = thing;
         }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
-            thing.Name = name.Text;
-            thing.Kind = kind.Text;
-            thing.Priority = priority.Text;
-            thing.StartTime = Convert.ToDateTime(starttime.Text);
-            thing.Etc = etc.Text;
-            thing.EndTime= Convert.ToDateTime(endtime.Text);
-
             CallBackThing(thing);
             Close();
         }
