@@ -11,6 +11,8 @@ namespace timeFairy
     public class Note : INotifyPropertyChanged
     {
         //事件名称，序号，时长，实际结束时间，预期结束时间
+        //时长为秒，因为在实际测试中等不了太长时间
+        //后期有空可以在显示的时候将秒转换为时分，但实际的单位仍然是秒
         private string name;
         private static double id=0;
         private double m;

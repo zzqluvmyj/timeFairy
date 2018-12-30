@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:timeFairy"
         mc:Ignorable="d"
+        
         Title="时间精灵" Height="450" Width="600">
     <Grid>
         <TabControl Height="419" Width="592" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Padding="5" Margin="5">
@@ -81,7 +82,17 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid>
-
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Canvas Name="canvas" Grid.Column="1" Width="480" Height="360">
+                    </Canvas>
+                    <StackPanel Name="stack" Width="120">
+                        <Button Click="Draw_Click">绘图</Button>
+                        <Button>fdsf</Button>
+                        <Button>fsdf</Button>
+                    </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem Header="成就">
@@ -100,7 +111,8 @@
 
                 </Grid>
             </TabItem>
-            
+
+
         </TabControl>
 
     </Grid>

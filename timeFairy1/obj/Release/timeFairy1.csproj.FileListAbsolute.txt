@@ -1,7 +1,0 @@
-D:\cangku\c#program\timeFairy\timeFairy1\obj\Release\timeFairy1.csprojAssemblyReference.cache
-D:\cangku\c#program\timeFairy\timeFairy1\obj\Release\ChangeItem.g.cs
-D:\cangku\c#program\timeFairy\timeFairy1\obj\Release\MainWindow.g.cs
-D:\cangku\c#program\timeFairy\timeFairy1\obj\Release\App.g.cs
-D:\cangku\c#program\timeFairy\timeFairy1\obj\Release\GeneratedInternalTypeHelper.g.cs
-D:\cangku\c#program\timeFairy\timeFairy1\obj\Release\timeFairy1_MarkupCompile.cache
-D:\cangku\c#program\timeFairy\timeFairy1\obj\Release\timeFairy1_MarkupCompile.lref

@@ -1,4 +1,0 @@
-D:\cangku\c#program\timeFairy\PopupTest\obj\Release\MainWindow.g.cs
-D:\cangku\c#program\timeFairy\PopupTest\obj\Release\App.g.cs
-D:\cangku\c#program\timeFairy\PopupTest\obj\Release\PopupTest_MarkupCompile.cache
-D:\cangku\c#program\timeFairy\PopupTest\obj\Release\PopupTest_MarkupCompile.lref

@@ -1,3 +1,0 @@
-D:\cangku\c#program\timeFairy\TimeFairy2\obj\Debug\TimeFairy2.csprojAssemblyReference.cache
-D:\cangku\c#program\timeFairy\TimeFairy2\obj\Debug\App.g.cs
-D:\cangku\c#program\timeFairy\TimeFairy2\obj\Debug\TimeFairy2_MarkupCompile.cache
