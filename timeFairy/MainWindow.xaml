@@ -77,7 +77,7 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        
+
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -185,26 +185,25 @@
                     <RotateTransform CenterX="5" CenterY="110" Angle="330"/>
                 </Rectangle.RenderTransform>
             </Rectangle>
-
             <!--指针-->
-            <Rectangle x:Name="hour" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="45" Margin="116,75,0,0" VerticalAlignment="Top" Width="8" Stroke="#FF340C0C">
+            <Rectangle x:Name="hour" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="55" Margin="116,65,0,0" VerticalAlignment="Top" Width="8" Stroke="#FF340C0C">
                 <Rectangle.RenderTransform>
-                    <RotateTransform x:Name="hourPointer" CenterX="4" CenterY="45" Angle="60"></RotateTransform>
+                    <RotateTransform x:Name="hourPointer" CenterX="4" CenterY="55" Angle="60"></RotateTransform>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Rectangle x:Name="minute" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="55" Margin="117,65,0,0" VerticalAlignment="Top" Width="6" Stroke="Black">
+            <Rectangle x:Name="minute" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="65" Margin="117,55,0,0" VerticalAlignment="Top" Width="6" Stroke="Black">
                 <Rectangle.RenderTransform>
-                    <RotateTransform x:Name="minutePointer" CenterX="3" CenterY="55" Angle="30"></RotateTransform>
+                    <RotateTransform x:Name="minutePointer" CenterX="3" CenterY="65" Angle="30"></RotateTransform>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Rectangle x:Name="second" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="65" Margin="119,55,0,0" VerticalAlignment="Top" Width="2" Stroke="Black">
+            <Rectangle x:Name="second" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="75" Margin="119,45,0,0" VerticalAlignment="Top" Width="2" Stroke="Black">
                 <Rectangle.RenderTransform>
-                    <RotateTransform x:Name="secondPointer" CenterX="1" CenterY="65" Angle="90"></RotateTransform>
+                    <RotateTransform x:Name="secondPointer" CenterX="1" CenterY="75" Angle="90"></RotateTransform>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Ellipse Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Fill="#BF135DA8" Width="30" Height="30" ></Ellipse>
             <Label x:Name="mytime" Grid.Row="0" Grid.Column="1" Content="21:49" Margin="0,156,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
             <Label x:Name="mydate" Grid.Row="0" Grid.Column="1" Content="2018-1-1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,104,0,0" FontWeight="Bold"></Label>
+            <Ellipse Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Fill="#FF5191FF" Width="30" Height="30" />
         </Grid>
     </Grid>
 </Window>

@@ -9,5 +9,6 @@ namespace timeFairy
     public class DelegateClass
     {
         public delegate void delegateMinute(TimeSpan m,Thing thing);
+        public delegate void delegateThing(Thing thing);
     }
 }

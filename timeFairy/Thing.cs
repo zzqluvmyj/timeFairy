@@ -14,6 +14,7 @@ namespace timeFairy
         [Serializable]
         private struct ThingItem
         {
+            internal int Thingid;
             internal string Name;
             internal string Etc;
             internal DateTime StartTime;
@@ -96,6 +97,18 @@ namespace timeFairy
                 }
             }
         }
+        public int Thingid
+        {
+            get { return currentThing.Thingid; }
+            set
+            {
+                if (currentThing.Thingid != value)
+                {
+                    currentThing.Thingid = value;
+                    Notify("Thingid");
+                }
+            }
+        }
         public string Priority
         {
             get { return currentThing.Priority; }
@@ -138,5 +151,4 @@ namespace timeFairy
             Notify("");
         }
     }
-
 }
