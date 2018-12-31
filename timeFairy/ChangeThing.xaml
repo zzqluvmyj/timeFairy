@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:timeFairy"
         mc:Ignorable="d"
-        Title="新事件" Height="300" Width="300">
-    <StackPanel Margin="10" Width="250">
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="新事件" Height="380" Width="300">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFCCFBC4" Offset="0"/>
+            <GradientStop Color="#FFFFF2A1" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <StackPanel Margin="10" Width="250" Background="#FFA9F0C9">
         <StackPanel.Resources>
             <Style TargetType="HeaderedContentControl">
                 <Setter Property="Margin" Value="2"/>
@@ -32,27 +39,26 @@
         </StackPanel.Resources>
 
         <HeaderedContentControl Header="名称">
-            <TextBox Name="name" Width="150" Text="{Binding Path=Name, Mode=TwoWay}"/>
+            <TextBox x:Name="name" Width="150" Text="{Binding Name, Mode=TwoWay}"/>
         </HeaderedContentControl>
         <HeaderedContentControl Header="优先级">
-            <TextBox Name="priority" Width="150" Text="{Binding Path=Priority, StringFormat=d, Mode=TwoWay}"/>
+            <TextBox x:Name="priority" Width="150" Text="{Binding Priority, Mode=TwoWay, StringFormat=d}"/>
         </HeaderedContentControl>
-        <HeaderedContentControl Header="种类">
-            <TextBox Name="kind" Width="150" Text="{Binding Path=Kind, StringFormat=d, Mode=TwoWay}"/>
+        <HeaderedContentControl  Header="种类">
+            <TextBox Width="150" x:Name="kind" Text="{Binding Kind, Mode=TwoWay, StringFormat=d}"/>
         </HeaderedContentControl>
-        <HeaderedContentControl Header="开始时间">
-            <TextBox Name="starttime" Width="150" Text="{Binding Path=StartTime, Mode=TwoWay}"/>
-        </HeaderedContentControl>
-        <HeaderedContentControl Header="结束时间">
-            <TextBox Width="150" Name="endtime" Text="{Binding Path=EndTime, StringFormat=d, Mode=TwoWay}"/>
-        </HeaderedContentControl>
-        
+        <Label>开始时间</Label>
+        <xctk:DateTimePicker x:Name="starttime" Height="50.182" Margin="10,0" Value="{Binding StartTime,Mode=TwoWay}"/>
+
+        <Label>结束时间</Label>
+        <xctk:DateTimePicker x:Name="endtime" Height="50.182" Margin="10,0" Value="{Binding StartTime,Mode=TwoWay}"/>
+
         <HeaderedContentControl Header="备注">
-            <TextBox Width="150" Name="etc" Text="{Binding Path=Etc, StringFormat=d, Mode=TwoWay}"/>
+            <TextBox Width="150" x:Name="etc"  Text="{Binding Etc, Mode=TwoWay, StringFormat=d}"/>
         </HeaderedContentControl>
         <StackPanel Orientation="Horizontal">
-            <Button IsDefault="True" Click="Submit_Click">提交</Button>
-            <Button IsCancel="True" Click="Return_Click">返回</Button>
+            <Button IsDefault="True" Click="Submit_Click" Content="提交"/>
+            <Button IsCancel="True" Click="Return_Click" Content="返回"/>
         </StackPanel>
     </StackPanel>
 </Window>

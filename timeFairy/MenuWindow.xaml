@@ -6,10 +6,17 @@
         xmlns:local="clr-namespace:timeFairy"
         mc:Ignorable="d"
         
-        Title="时间精灵" Height="450" Width="800">
-    <Grid>
+        Title="时间精灵" Height="450" Width="840">
+    <Grid Background="#FF7CFF94">
         <TabControl VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Padding="5" Margin="5">
-            <TabItem Header="事件集" Height="20" HorizontalAlignment="Center" OpacityMask="#FF756ABF">
+            <TabControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFCCECF5" Offset="1"/>
+                    <GradientStop Color="#FFD0FBFF" Offset="0.491"/>
+                </LinearGradientBrush>
+            </TabControl.Background>
+            <TabItem Header="事件集" Height="25" HorizontalAlignment="Center" OpacityMask="#FF756ABF" FontSize="18">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -17,9 +24,9 @@
                         <GradientStop Color="#FFF7797D" Offset="1"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <Grid>
+                <Grid Background="#FFF0FFEC">
                     <StackPanel>
-                        <ListView Name="AllThings" ItemsSource="{Binding ThingsList, Mode=TwoWay}">
+                        <ListView Name="AllThings" ItemsSource="{Binding ThingsList, Mode=TwoWay}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontSize="16" Background="#FFDBF3FF">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Header="名称"
@@ -38,15 +45,15 @@
                             </ListView.View>
                         </ListView>
                         <StackPanel Orientation="Horizontal">
-                            <Button Name="add" Click="Add_Click">Add</Button>
-                            <Button Name="edit" Click="Edit_Click">Edit</Button>
-                            <Button Name="remove" Click="Remove_Click">Remove</Button>
-                            <Button Name="record" Click="Record_Click">计时</Button>
+                            <Button Name="add" Click="Add_Click" Background="#FF41F1C1" Margin="20,0,0,0">添加</Button>
+                            <Button Name="edit" Click="Edit_Click" Background="#FF41F1C1" Margin="50,0,0,0">修改</Button>
+                            <Button Name="remove" Click="Remove_Click" Background="#FF41F1C1" Margin="50,0,0,0">移除</Button>
+                            <Button Name="record" Click="Record_Click" Background="#FF41F1C1" Margin="50,0,0,0">计时</Button>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="记录">
+            <TabItem Header="记录" FontSize="18">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FF99F0B4" Offset="0"/>
@@ -54,8 +61,8 @@
                         <GradientStop Color="#FF549308" Offset="1"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <Grid>
-                    <ListView Name="AllNotes" ItemsSource="{Binding NotesList, Mode=TwoWay}">
+                <Grid Background="White">
+                    <ListView Name="AllNotes" ItemsSource="{Binding NotesList, Mode=TwoWay}" Background="#FFF3F7E7" FontSize="16">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="序号"
@@ -73,7 +80,7 @@
                     </ListView>
                 </Grid>
             </TabItem>
-            <TabItem Header="统计">
+            <TabItem Header="统计" FontSize="18">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF4E2D8" Offset="0"/>
@@ -84,21 +91,34 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition MaxWidth="480" MinWidth="480" Width="Auto"/>
+                        <ColumnDefinition Width="Auto" MinWidth="123"/>
                     </Grid.ColumnDefinitions>
-                    <Canvas Name="canvas" Grid.Column="1" Width="480" Height="360">
-                    </Canvas>
-                    <WrapPanel Grid.Column="2" Name="wrap">
-                        
-                    </WrapPanel>
-                    <StackPanel Grid.Column="0" Name="stack">
-                        <Calendar Name="calendar"></Calendar>
-                        <Button Click="Draw_Click">绘图</Button>
+                    <StackPanel Grid.Column="0" Name="stack" Margin="0">
+                        <Calendar Name="calendar" SelectionMode="SingleDate">
+                            <Calendar.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF02ECC1" Offset="0"/>
+                                    <GradientStop Color="#FFA5FFCE" Offset="0.47"/>
+                                    <GradientStop Color="#FFFCFCFD" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Calendar.Background>
+                        </Calendar>
+                        <Button Click="Change_Pattern" Background="#FFADF37D" Width="120">切换月份</Button>
+                        <Label Background="#FFF07D2E" HorizontalAlignment="Center">绘图
+                        </Label>
+                        <Button Click="Draw_Click" Background="#FF98F7AD" Width="120">全部</Button>
+                        <Button Click="DrawMonth" Background="#FF98F7AD" Width="120">当月</Button>
+                        <Button Click="DrawTheMonth" Background="#FF98F7AD" Width="120">选中月</Button>
+                        <Button Click="DrawDay" Background="#FF98F7AD" Width="120">当日</Button>
+                        <Button Click="DrawTheDay" Background="#FF98F7AD" Width="120">选中日</Button>
                     </StackPanel>
+                    <Grid Grid.Column="1" Margin="0">
+                        <Canvas Name="canvas" Margin="0,7.5"></Canvas>
+                    </Grid>
+                    <WrapPanel Grid.Column="2" Name="wrap" Width="145" Height="auto"></WrapPanel>
                 </Grid>
             </TabItem>
-
         </TabControl>
 
     </Grid>

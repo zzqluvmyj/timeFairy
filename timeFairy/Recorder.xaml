@@ -5,16 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:timeFairy"
         mc:Ignorable="d"
-        Title="Recorder" Height="450" Width="800">
+        Title="计时器" Height="240" Width="160" WindowStyle="None">
     <Grid>
-        
-        <TextBox Name="textBox" HorizontalAlignment="Left" Height="43.851" Margin="192.288,187.038,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Width="137.819"/>
-        <Button Content="开始" Click="Start_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="69.954,146.171,0,0"/>
-        <Button Content="暂停" Click="Pause_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="238.051,146.171,0,0"/>
-        <Button Content="清零" Click="End_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="380.047,146.171,0,0"/>
-        <Button Content="完成" Click="Close_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="509.512,146.171,0,0"/>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
-        <Label Name="label" Content="00:00:00" HorizontalAlignment="Left" Height="40.719" Margin="125.466,262.211,0,0" VerticalAlignment="Top" Width="146.172"/>
-
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF9BB655" Offset="0.038"/>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FF60FF76" Offset="0.564"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Margin="0" Width="70" Height="180">
+            <Button Content="开始" Click="Start_Click" Width="75" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFF0DE30"/>
+            <Button Content="暂停" Click="Pause_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,10,0,0" Background="#FF5CE882"/>
+            <Button Content="清零" Click="End_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,10,0,0" Background="#FF94BCF7"/>
+            <Label Name="label" Content="00:00:00" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Background="#FFBCEEC7" FontSize="14" FontWeight="Bold"/>
+            <Button Content="返回" Click="Close_Win" Width="75" Margin="0,10,0,0" HorizontalAlignment="Right" Background="#FFCA8BFF"/>
+            <Button Content="完成" Click="Close_Click" Width="75" Margin="0,10,0,0" HorizontalAlignment="Right" Background="#FF1EE0E0"/>
+        </StackPanel>
     </Grid>
 </Window>

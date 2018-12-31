@@ -24,13 +24,10 @@ namespace timeFairy
         {
             this.RadiusX = radius;
             this.RadiusY = radius;
-
             this.SpanRadiusX = spanRadius;
             this.SpanRadiusY = spanRadius;
-
             this.FillBrush = fillBrush;
         }
-
         /// <summary>
         /// 构造函数
         /// </summary>

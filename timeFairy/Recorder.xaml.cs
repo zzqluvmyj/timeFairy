@@ -4,12 +4,15 @@ using System.Windows.Threading;
 
 namespace timeFairy
 {
-    //使用回调函数返回子窗口的计时数据
     
-   
+    /// <summary>
+    /// 用于记录时间的后台类
+    /// </summary>
     public partial class Recorder : Window
     {
+        //使用回调函数返回子窗口的计时数据
         public DelegateClass.delegateTime CallBackTime;
+        //
         enum State
         {
             Start,
@@ -24,10 +27,9 @@ namespace timeFairy
             get { return timeLength; }
             set { timeLength = value; }
         }
-
+        //新建计时器，也就是DispatcherTimer的实例，设定间隔设定，添加事件
         public Recorder(Thing thing)
-        {
-            
+        {         
             InitializeComponent();
             var t = new DispatcherTimer();
             t.Interval = new TimeSpan(0, 0, 0, 1);
@@ -36,7 +38,7 @@ namespace timeFairy
             t.Start();
             this.thing = thing;
         }
-
+        //选项处理
         void OnTimer(object sender, EventArgs e)
         {
             switch (state)
@@ -60,7 +62,6 @@ namespace timeFairy
             }
 
             var time = string.Format("{0:D2}:{1:D2}:{2:D2}", timeLength.Hours, timeLength.Minutes, timeLength.Seconds);
-            textBox.Text = time;
             label.Content = time;
         }
 
@@ -85,5 +86,9 @@ namespace timeFairy
             state = State.End;
         }
 
+        private void Close_Win(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -1,24 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace timeFairy
 {
     /// <summary>
-    /// ChangeThing.xaml 的交互逻辑
+    /// 编辑事件窗口
     /// </summary>
     public partial class ChangeThing : Window
     {
+        //和addthing类大同小异
         private Thing thing;
         public DelegateClass.delegateThing CallBackThing;
         public ChangeThing()
@@ -35,7 +25,7 @@ namespace timeFairy
             thing.Priority = priority.Text;
             thing.StartTime = Convert.ToDateTime(starttime.Text);
             thing.Etc = etc.Text;
-            thing.EndTime= Convert.ToDateTime(endtime.Text);
+            thing.EndTime = Convert.ToDateTime(endtime.Text);
 
             CallBackThing(thing);
             Close();

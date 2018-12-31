@@ -90,9 +90,6 @@
     </Compile>
     <Compile Include="RingPart.cs" />
     <Compile Include="SectorPart.cs" />
-    <Compile Include="test.xaml.cs">
-      <DependentUpon>test.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Thing.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="AddThing.xaml">
@@ -120,10 +117,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Recorder.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

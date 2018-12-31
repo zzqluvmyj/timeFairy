@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace timeFairy
 {
+    /// <summary>
+    /// 可实例化事件类，注意属性PropertyChanged
+    /// </summary>
     [Serializable]
     public class Thing : INotifyPropertyChanged
     {
-        //分别为名称，备注，开始时间，结束时间，种类，优先级
-
+        //分别为事件ID名称，备注，开始时间，结束时间，种类，优先级
         private int thingid;
         private string name;
         private string etc;
@@ -128,7 +130,7 @@ namespace timeFairy
         public override string ToString() => $"{Name}, {Etc}, {StartTime:d},{EndTime:d},{Kind},{Priority}";
 
         //实现了事件提醒的接口，用于数据绑定
-        //为了防止报错：未实现Inotify接口的PropertyChanged属性
+        //为了防止报错：不要实例化PropertyChanged属性
         [field: NonSerializedAttribute()]
         public event PropertyChangedEventHandler PropertyChanged;
         private void Notify(string info)

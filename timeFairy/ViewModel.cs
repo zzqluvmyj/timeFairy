@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace timeFairy
 {
-    [Serializable]
+    /// <summary>
+    /// mvvm模式的视图模型，用于封装数据缓存
+    /// </summary>
     public class ViewModel : INotifyPropertyChanged
     {
-
         private ObservableCollection<Thing> thingsList;
         private ObservableCollection<Note> notesList;
 
@@ -28,7 +29,6 @@ namespace timeFairy
                 
             }
         }
-
         public ObservableCollection<Thing> ThingsList
         {
             get
@@ -44,7 +44,6 @@ namespace timeFairy
                 }
             }
         }
-
         //为了防止报错：未实现Inotify接口的PropertyChanged属性
         [field: NonSerializedAttribute()]
         public event PropertyChangedEventHandler PropertyChanged;

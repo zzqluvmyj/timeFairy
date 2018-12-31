@@ -1,38 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace timeFairy
 {
     /// <summary>
-    /// ChangeThing.xaml 的交互逻辑
+    /// 添加时间窗口
     /// </summary>
     public partial class AddThing : Window
     {
-        private Thing thing;
-        public DelegateClass.delegateThing CallBackThing;
+        
+        private Thing thing;//用于回调的thing
+        public DelegateClass.delegateThing CallBackThing;//回调函数声明
         public AddThing()
         {
             InitializeComponent();
             thing = new Thing();
-            this.DataContext = thing;
+            this.DataContext = thing; 
         }
-
+        //回调thing并关闭
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             CallBackThing(thing);
             Close();
         }
+        //
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             Close();

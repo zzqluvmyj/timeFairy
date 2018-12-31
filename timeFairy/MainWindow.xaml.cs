@@ -1,19 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace timeFairy
@@ -27,7 +14,6 @@ namespace timeFairy
         //这里是设定一千毫秒的计时器，必须为全局变量，负责有可能被系统回收
         System.Timers.Timer timer = new System.Timers.Timer(1000);
         private MenuWindow menuWindow = new MenuWindow();//创建菜单窗口的实例
-
         public MainWindow()
         {
             InitializeComponent();

@@ -1,19 +1,26 @@
-﻿<Window x:Class="timeFairy.AddThing"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:timeFairy"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="timeFairy.AddThing"
         mc:Ignorable="d"
-        Title="新事件" Height="300" Width="300">
-    <StackPanel Margin="10" Width="250">
+        Title="新事件" Height="380" Width="300">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFCCFBC4" Offset="0"/>
+            <GradientStop Color="#FFFFF2A1" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <StackPanel Margin="10" Width="250" x:Name="stack" Background="#FFA9F0C9">
         <StackPanel.Resources>
-            <Style TargetType="HeaderedContentControl">
+            <Style TargetType="{x:Type HeaderedContentControl}">
                 <Setter Property="Margin" Value="2"/>
                 <Setter Property="Focusable" Value="False"/>
                 <Setter Property="Template">
                     <Setter.Value>
-                        <ControlTemplate TargetType="HeaderedContentControl">
+                        <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
                             <DockPanel LastChildFill="False">
                                 <ContentPresenter ContentSource="Header" DockPanel.Dock="Left" 
                                   Focusable="False" VerticalAlignment="Center"/>
@@ -24,7 +31,7 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-            <Style TargetType="Button">
+            <Style TargetType="{x:Type Button}">
                 <Setter Property="Width" Value="100"/>
                 <Setter Property="Margin" Value="10,15,15,15"/>
 
@@ -32,27 +39,32 @@
         </StackPanel.Resources>
 
         <HeaderedContentControl Header="名称">
-            <TextBox Name="name" Width="150" Text="{Binding Path=Name, Mode=TwoWay}"/>
+            <TextBox x:Name="name" Width="150" Text="{Binding Name, Mode=TwoWay}"/>
         </HeaderedContentControl>
         <HeaderedContentControl Header="优先级">
-            <TextBox Name="priority" Width="150" Text="{Binding Path=Priority, StringFormat=d, Mode=TwoWay}"/>
+            <TextBox x:Name="priority" Width="150" Text="{Binding Priority, Mode=TwoWay, StringFormat=d}"/>
         </HeaderedContentControl>
         <HeaderedContentControl Header="种类">
-            <TextBox Width="150" Text="{Binding Path=Kind, StringFormat=d, Mode=TwoWay}"/>
+            <TextBox Width="150" Text="{Binding Kind, Mode=TwoWay, StringFormat=d}"/>
         </HeaderedContentControl>
+        <Label>开始时间</Label>
+        <xctk:DateTimePicker Height="50.182" Margin="10,0" Value="{Binding StartTime,Mode=TwoWay}"/>
+
         <HeaderedContentControl Header="开始时间">
-            <TextBox Width="150" Text="{Binding Path=StartTime, Mode=TwoWay}"/>
+            <TextBox Width="150" Text="{Binding StartTime, Mode=TwoWay}"/>
         </HeaderedContentControl>
+        <Label>结束时间</Label>
+        <xctk:DateTimePicker Height="50.182" Margin="10,0" Value="{Binding StartTime,Mode=TwoWay}"/>
         <HeaderedContentControl Header="结束时间">
-            <TextBox Width="150" Text="{Binding Path=EndTime, StringFormat=d, Mode=TwoWay}"/>
+            <TextBox Width="150" Text="{Binding EndTime, Mode=TwoWay, StringFormat=d}"/>
         </HeaderedContentControl>
 
         <HeaderedContentControl Header="备注">
-            <TextBox Width="150" Text="{Binding Path=Etc, StringFormat=d, Mode=TwoWay}"/>
+            <TextBox Width="150" Text="{Binding Etc, Mode=TwoWay, StringFormat=d}"/>
         </HeaderedContentControl>
         <StackPanel Orientation="Horizontal">
-            <Button IsDefault="True" Click="Submit_Click">提交</Button>
-            <Button IsCancel="True" Click="Return_Click">返回</Button>
+            <Button IsDefault="True" Click="Submit_Click" Content="提交"/>
+            <Button IsCancel="True" Click="Return_Click" Content="返回"/>
         </StackPanel>
     </StackPanel>
 </Window>

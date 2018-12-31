@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace timeFairy
 {
-
+    //以下注释为曾经的测试数据
     //List<Thing> t = new List<Thing>
     //{
     //new Thing("吃饭",DateTime.Now,DateTime.Now,"习惯","重要","每天三顿"),
@@ -21,19 +21,17 @@ namespace timeFairy
     //转换list到observableCollection并赋值给viewModel.ThingsList
     //可以不用转换，转换是在修改bug时所加，以为可以改正bug，后发现没有
     //bug是PropertyChanged未序列化
-    //ObservableCollection<Thing> t = new ObservableCollection<Thing>
-    //{
-    //new Thing("吃饭",DateTime.Now,DateTime.Now,"习惯","重要","每天三顿"),
-    //new Thing("看电影",DateTime.Now,DateTime.Now,"计划","重要","带女朋友去看"),
-    //new Thing("玩游戏",DateTime.Now,DateTime.Now,"目标","普通","别玩太久"),
-    //new Thing("学习",DateTime.Now,DateTime.Now,"一次","紧急","期末考试到了")
-    //};
     //ObservableCollection<Thing> t = FileMethod.ReadThings("..//..//storage//things.dat");
     //ObservableCollection<Note> n = new ObservableCollection<Note>
     //{
     //    new Note("chifan",5,DateTime.Now,DateTime.Now)
     //};
-
+    //ObservableCollection<Thing> t = new ObservableCollection<Thing>();
+    //t.Add(new Thing(t.Count, "吃饭", DateTime.Now, DateTime.Now, "习惯", "重要", "每天三顿"));
+    //t.Add(new Thing(t.Count, "吃饭", DateTime.Now, DateTime.Now, "习惯", "重要", "每天三顿"));
+    //t.Add(new Thing(t.Count, "看电影", DateTime.Now, DateTime.Now, "计划", "重要", "带女朋友去看"));
+    //t.Add(new Thing(t.Count, "玩游戏",DateTime.Now,DateTime.Now,"目标","普通","别玩太久"));
+    //t.Add(new Thing(t.Count, "学习", DateTime.Now, DateTime.Now, "一次", "紧急", "期末考试到了"));
     //FileMethod.SaveNotes("..//..//storage//notes.dat", n);
     public static class FileMethod
     {
