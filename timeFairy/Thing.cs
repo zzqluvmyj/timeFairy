@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +14,7 @@ namespace timeFairy
     /// 可实例化事件类，注意属性PropertyChanged
     /// </summary>
     [Serializable]
-    public class Thing : INotifyPropertyChanged
+    public class Thing : INotifyPropertyChanged,ICloneable
     {
         //分别为事件ID名称，备注，开始时间，结束时间，种类，优先级
         private int thingid;
@@ -125,9 +128,19 @@ namespace timeFairy
                 }
             }
         }
+        public Thing DeepClone()
+        {
+            using (Stream objectStream = new MemoryStream())
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(objectStream, this);
+                objectStream.Seek(0, SeekOrigin.Begin);
+                return formatter.Deserialize(objectStream) as Thing;
+            }
+        }
 
 
-        public override string ToString() => $"{Name}, {Etc}, {StartTime:d},{EndTime:d},{Kind},{Priority}";
+    public override string ToString() => $"{Name}, {Etc}, {StartTime:d},{EndTime:d},{Kind},{Priority}";
 
         //实现了事件提醒的接口，用于数据绑定
         //为了防止报错：不要实例化PropertyChanged属性
@@ -137,6 +150,12 @@ namespace timeFairy
         {
             var handler = PropertyChanged;
             handler?.Invoke(this, new PropertyChangedEventArgs(info));
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+            //throw new NotImplementedException();
         }
     }
 }

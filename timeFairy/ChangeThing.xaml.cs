@@ -10,7 +10,6 @@ namespace timeFairy
     {
         //和addthing类大同小异
         private Thing thing;
-        public DelegateClass.delegateThing CallBackThing;
         public ChangeThing()
         {
             InitializeComponent();
@@ -26,12 +25,11 @@ namespace timeFairy
             thing.StartTime = Convert.ToDateTime(starttime.Text);
             thing.Etc = etc.Text;
             thing.EndTime = Convert.ToDateTime(endtime.Text);
-
-            CallBackThing(thing);
             Close();
         }
         private void Return_Click(object sender, RoutedEventArgs e)
         {
+            DialogResult = false;
             Close();
         }
     }

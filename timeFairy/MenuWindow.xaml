@@ -25,10 +25,21 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="#FFF0FFEC">
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="Blue"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Resources>
                     <StackPanel>
                         <ListView Name="AllThings" ItemsSource="{Binding ThingsList, Mode=TwoWay}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontSize="16" Background="#FFDBF3FF">
                             <ListView.View>
                                 <GridView>
+                                   
                                     <GridViewColumn Header="名称"
                           DisplayMemberBinding="{Binding Path=Name}"/>
                                     <GridViewColumn Header="开始时间"
@@ -62,6 +73,16 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <Grid Background="White">
+                    <Grid.Resources>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="Blue"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Resources>
                     <ListView Name="AllNotes" ItemsSource="{Binding NotesList, Mode=TwoWay}" Background="#FFF3F7E7" FontSize="16">
                         <ListView.View>
                             <GridView>

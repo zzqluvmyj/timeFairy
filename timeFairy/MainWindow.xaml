@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:timeFairy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="280" Width="240"  AllowsTransparency="True" Background="{x:Null}" WindowStyle="None" WindowStartupLocation="Manual" Window.Left="1500" Window.Top="30"
+        Title="MainWindow" Height="280" Width="240"  AllowsTransparency="True" Background="{x:Null}" WindowStyle="None" WindowStartupLocation="Manual" Window.Left="1500" Window.Top="10"
         MouseLeftButtonDown="PressAndDrag">
     <Window.Resources>
         <!--刻度，除了3,6,9,12-->

@@ -65,24 +65,28 @@ namespace timeFairy
             win.Show();
             win.CallBackThing = addThing;
         }
-        //增加时间的回调函数
+        //增加事件的回调函数
         private void addThing(Thing thing)
         {
-            if (thing.Name.Length!=0) {
+            if (thing.Name.Length!=0 || thing.EndTime>=thing.StartTime) {
                 thing.Thingid = viewModel.ThingsList.Count;
                 viewModel.ThingsList.Add(thing);
             }
-            else
+            else if(thing.Name.Length==0)
             {
                 Xceed.Wpf.Toolkit.MessageBox.Show("事件名称不能为空！");
             }
-               
+            else
+            {
+                Xceed.Wpf.Toolkit.MessageBox.Show("结束时间不能小于开始时间！");
+            }
         }
+        private Thing newThing;
         //编辑事件的回调函数
-        private void EditThing(Thing thing)
-        {
-            viewModel.ThingsList.Add(thing);
-        }
+        //private void EditThing(Thing thing)
+        //{
+        //    newThing=thing;
+        //}
         //
         private void Edit_Click(object sender, RoutedEventArgs e)
         {             
@@ -92,13 +96,16 @@ namespace timeFairy
                 return;
             }
             var win = new ChangeThing();
-            var temp = AllThings.SelectedItem as Thing;//原来的事件
-            win.DataContext = temp;
-            win.CallBackThing = EditThing;
+            Thing temp = (AllThings.SelectedItem as Thing).DeepClone();//深拷贝保存原来的对象
+            win.DataContext = AllThings.SelectedItem;
+            //win.CallBackThing = EditThing;
             if ((bool)win.ShowDialog())
             {
+            }
+            else
+            {
                 viewModel.ThingsList.Remove(AllThings.SelectedItem as Thing);
-                win.CallBackThing = EditThing;
+                viewModel.ThingsList.Add(temp);
             }
         }
         //

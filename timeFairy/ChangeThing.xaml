@@ -51,7 +51,7 @@
         <xctk:DateTimePicker x:Name="starttime" Height="50.182" Margin="10,0" Value="{Binding StartTime,Mode=TwoWay}"/>
 
         <Label>结束时间</Label>
-        <xctk:DateTimePicker x:Name="endtime" Height="50.182" Margin="10,0" Value="{Binding StartTime,Mode=TwoWay}"/>
+        <xctk:DateTimePicker x:Name="endtime" Height="50.182" Margin="10,0" Value="{Binding EndTime,Mode=TwoWay}"/>
 
         <HeaderedContentControl Header="备注">
             <TextBox Width="150" x:Name="etc"  Text="{Binding Etc, Mode=TwoWay, StringFormat=d}"/>

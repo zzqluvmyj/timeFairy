@@ -90,5 +90,10 @@ namespace timeFairy
         {
             Close();
         }
+
+        private void PressAndDrag(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }
