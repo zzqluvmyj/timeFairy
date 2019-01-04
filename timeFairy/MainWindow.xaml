@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:timeFairy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="280" Width="240"  AllowsTransparency="True" Background="{x:Null}" WindowStyle="None" WindowStartupLocation="Manual" Window.Left="1500" Window.Top="10"
+        Title="MainWindow" Height="280" Width="240"  AllowsTransparency="True" Background="{x:Null}" WindowStyle="None" WindowStartupLocation="Manual" Window.Left="800" Window.Top="10"
         MouseLeftButtonDown="PressAndDrag">
     <Window.Resources>
         <!--刻度，除了3,6,9,12-->
@@ -193,7 +193,7 @@
             </Rectangle>
             <Rectangle x:Name="minute" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="65" Margin="117,55,0,0" VerticalAlignment="Top" Width="6" Stroke="Black">
                 <Rectangle.RenderTransform>
-                    <RotateTransform x:Name="minutePointer" CenterX="3" CenterY="65" Angle="30"></RotateTransform>
+                    <RotateTransform x:Name="minutePointer" CenterX="3" CenterY="65" Angle="30"/>
                 </Rectangle.RenderTransform>
             </Rectangle>
             <Rectangle x:Name="second" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="3" Height="75" Margin="119,45,0,0" VerticalAlignment="Top" Width="2" Stroke="Black">

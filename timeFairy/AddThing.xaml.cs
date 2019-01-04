@@ -3,7 +3,7 @@
 namespace timeFairy
 {
     /// <summary>
-    /// 添加时间窗口
+    /// 添加事件窗口
     /// </summary>
     public partial class AddThing : Window
     {

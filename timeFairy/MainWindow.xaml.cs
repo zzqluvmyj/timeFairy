@@ -6,7 +6,7 @@ using System.Windows.Threading;
 namespace timeFairy
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// 时钟的后台类
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -19,7 +19,6 @@ namespace timeFairy
             InitializeComponent();
             InitClock();
         }
-
         private void PressAndDrag(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
@@ -71,7 +70,5 @@ namespace timeFairy
                 menuWindow.WindowState = System.Windows.WindowState.Normal;
             }
         }
-
     }
-
 }

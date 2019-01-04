@@ -28,7 +28,6 @@ namespace timeFairy
         //    tempList = tempCollection.ToList();
         //    return tempList;
         //}
-
         public MenuWindow()
         {
             InitializeComponent();
@@ -38,7 +37,6 @@ namespace timeFairy
             try {
                 ObservableCollection<Thing> t = FileMethod.ReadThings("..//..//storage//things.dat");
                 ObservableCollection<Note> n = FileMethod.ReadNotes("..//..//storage//notes.dat");
-                //ObservableCollection<Note> n = new ObservableCollection<Note>();
                 viewModel.ThingsList = t;
                 viewModel.NotesList = n;
             }
@@ -68,26 +66,19 @@ namespace timeFairy
         //增加事件的回调函数
         private void addThing(Thing thing)
         {
-            if (thing.Name.Length!=0 || thing.EndTime>=thing.StartTime) {
+            if (thing.Name.Length!=0 && thing.EndTime>=thing.StartTime) {
                 thing.Thingid = viewModel.ThingsList.Count;
                 viewModel.ThingsList.Add(thing);
             }
-            else if(thing.Name.Length==0)
+            if(thing.Name.Length==0)
             {
-                Xceed.Wpf.Toolkit.MessageBox.Show("事件名称不能为空！");
+                Xceed.Wpf.Toolkit.MessageBox.Show("事件名称不能为空！添加失败！");
             }
-            else
+            else if(thing.EndTime < thing.StartTime)
             {
-                Xceed.Wpf.Toolkit.MessageBox.Show("结束时间不能小于开始时间！");
+                Xceed.Wpf.Toolkit.MessageBox.Show("结束时间不能小于开始时间！添加失败！");
             }
         }
-        private Thing newThing;
-        //编辑事件的回调函数
-        //private void EditThing(Thing thing)
-        //{
-        //    newThing=thing;
-        //}
-        //
         private void Edit_Click(object sender, RoutedEventArgs e)
         {             
             if (AllThings.SelectedItem == null)
@@ -97,10 +88,26 @@ namespace timeFairy
             }
             var win = new ChangeThing();
             Thing temp = (AllThings.SelectedItem as Thing).DeepClone();//深拷贝保存原来的对象
-            win.DataContext = AllThings.SelectedItem;
+            Thing thing = AllThings.SelectedItem as Thing;
+            win.DataContext = thing;
             //win.CallBackThing = EditThing;
             if ((bool)win.ShowDialog())
             {
+                if (thing.Name.Length != 0 && thing.EndTime >= thing.StartTime)
+                {
+                }
+                if (thing.Name.Length == 0)
+                {
+                    Xceed.Wpf.Toolkit.MessageBox.Show("事件名称不能为空！修改失败！");
+                    viewModel.ThingsList.Remove(AllThings.SelectedItem as Thing);
+                    viewModel.ThingsList.Add(temp);
+                }
+                else if(thing.EndTime < thing.StartTime)
+                {
+                    Xceed.Wpf.Toolkit.MessageBox.Show("结束时间不能小于开始时间！修改失败！");
+                    viewModel.ThingsList.Remove(AllThings.SelectedItem as Thing);
+                    viewModel.ThingsList.Add(temp);
+                }
             }
             else
             {
@@ -138,7 +145,7 @@ namespace timeFairy
 
             if (item == null)
             {
-                Xceed.Wpf.Toolkit.MessageBox.Show("没有记录被选中！");
+                Xceed.Wpf.Toolkit.MessageBox.Show("没有事件被选中！");
                 return;
             }
             var win = new Recorder(item);
@@ -174,11 +181,6 @@ namespace timeFairy
             {
                 this.wrap.Children.Add(item);
             }
-        }
-        //改变日历的显示模式
-        private void Change_Pattern(object sender, RoutedEventArgs e)
-        {
-            calendar.DisplayMode = CalendarMode.Month;
         }
         //当前月份的画图
         private void DrawMonth(object sender, RoutedEventArgs e)

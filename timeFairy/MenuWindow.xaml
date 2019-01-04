@@ -35,11 +35,15 @@
                             </Style.Triggers>
                         </Style>
                     </Grid.Resources>
-                    <StackPanel>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44*"/>
+                        <ColumnDefinition Width="361*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.ColumnSpan="2">
                         <ListView Name="AllThings" ItemsSource="{Binding ThingsList, Mode=TwoWay}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" FontSize="16" Background="#FFDBF3FF">
                             <ListView.View>
                                 <GridView>
-                                   
+
                                     <GridViewColumn Header="名称"
                           DisplayMemberBinding="{Binding Path=Name}"/>
                                     <GridViewColumn Header="开始时间"
@@ -125,8 +129,8 @@
                                 </LinearGradientBrush>
                             </Calendar.Background>
                         </Calendar>
-                        <Button Click="Change_Pattern" Background="#FFADF37D" Width="120">切换月份</Button>
-                        <Label Background="#FFF07D2E" HorizontalAlignment="Center">绘图
+                        
+                        <Label Background="#FFF07D2E" HorizontalAlignment="Center" Margin="0,10,0,10">绘图
                         </Label>
                         <Button Click="Draw_Click" Background="#FF98F7AD" Width="120">全部</Button>
                         <Button Click="DrawMonth" Background="#FF98F7AD" Width="120">当月</Button>

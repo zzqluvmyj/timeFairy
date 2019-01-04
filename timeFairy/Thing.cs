@@ -128,6 +128,7 @@ namespace timeFairy
                 }
             }
         }
+        //通过文件序列化而实现的深拷贝方法
         public Thing DeepClone()
         {
             using (Stream objectStream = new MemoryStream())
@@ -155,7 +156,6 @@ namespace timeFairy
         public object Clone()
         {
             return this.MemberwiseClone();
-            //throw new NotImplementedException();
         }
     }
 }
