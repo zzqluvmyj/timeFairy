@@ -1,5 +1,0 @@
-D:\cangku\c#program\timeFairy\TestCollection\obj\Release\TestCollection.csprojAssemblyReference.cache
-D:\cangku\c#program\timeFairy\TestCollection\obj\Release\MainWindow.g.cs
-D:\cangku\c#program\timeFairy\TestCollection\obj\Release\App.g.cs
-D:\cangku\c#program\timeFairy\TestCollection\obj\Release\TestCollection_MarkupCompile.cache
-D:\cangku\c#program\timeFairy\TestCollection\obj\Release\TestCollection_MarkupCompile.lref

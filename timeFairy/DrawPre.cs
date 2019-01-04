@@ -88,7 +88,6 @@ namespace timeFairy
         {
             double max = 0;
             int index1;
-            int index2;
             //在记录中找重复的，重复的条件是名称和事件序号相同
             foreach (Note item in notes)
             {
@@ -98,14 +97,7 @@ namespace timeFairy
                     index1 = lists.IndexOf(item.Name);
                     if (index1 > -1)
                     {
-                        index2 = listn.IndexOf(item.Thingid);
-                        if (index2 > -1)
-                        {
-                            if (index1 == index2)
-                            {
-                                listd[index1] += item.M;
-                            }
-                        }
+                        listd[index1] += item.M;
                     }
                     else
                     {
@@ -126,7 +118,7 @@ namespace timeFairy
         {
             double max = 0;
             int index1;
-            int index2;
+
             //在记录中找重复的，重复的条件是名称和事件序号相同
             foreach (Note item in notes)
             {
@@ -136,14 +128,7 @@ namespace timeFairy
                     index1 = lists.IndexOf(item.Name);
                     if (index1 > -1)
                     {
-                        index2 = listn.IndexOf(item.Thingid);
-                        if (index2 > -1)
-                        {
-                            if (index1 == index2)
-                            {
-                                listd[index1] += item.M;
-                            }
-                        }
+                        listd[index1] += item.M;
                     }
                     else
                     {
@@ -164,7 +149,6 @@ namespace timeFairy
         {
             double max = 0;
             int index1;
-            int index2;
             //在记录中找重复的，重复的条件是名称和事件序号相同
             foreach (Note item in notes)
             {
@@ -172,14 +156,7 @@ namespace timeFairy
                 index1 = lists.IndexOf(item.Name);
                 if (index1 > -1)
                 {
-                    index2 = listn.IndexOf(item.Thingid);
-                    if (index2 > -1)
-                    {
-                        if (index1 == index2)
-                        {
                             listd[index1] += item.M;
-                        }
-                    }
                 }
                 else
                 {
